@@ -5,6 +5,3 @@ logs/
 bin/
 obj/
 
-
-# Editor directories and files
-*.sln
