@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+logs/
+/dist
+bin/
+obj/
+
+
+# Editor directories and files
+*.sln

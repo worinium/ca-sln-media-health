@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>ca_sln_media_health.Domain</RootNamespace>
+    <AssemblyName>ca_sln_media_health.Domain</AssemblyName>
+  </PropertyGroup>
+
+</Project>
