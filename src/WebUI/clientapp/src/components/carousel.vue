@@ -9,7 +9,6 @@
         </v-sheet>
       </v-carousel-item>
     </v-carousel>
-
   </v-row>
 </template>
 

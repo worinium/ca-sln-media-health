@@ -1,63 +1,56 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/PreliminaryPages/Home.vue')
+    path: "/",
+    name: "Home",
+    component: () => import("../views/PreliminaryPages/Home.vue")
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/PreliminaryPages/About.vue')
-    },
+    path: "/about",
+    name: "About",
+    component: () => import("../views/PreliminaryPages/About.vue")
+  },
 
-    {
-      path: '/contact',
-      name: 'ContactUs',
-      component: () => import(/* webpackChunkName: "about" */ '../views/PreliminaryPages/ContactUs.vue')
-    },
   {
-    path: '/amrservices',
-    name: 'AudienceMeasurementReport',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Services/AMRServices.vue')
-    },
-    {
-      path: '/mmrservices',
-      name: 'MediaMonitoringReport',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '../views/Services/MMRServices.vue')
-    },
+    path: "/contact",
+    name: "ContactUs",
+    component: () => import("../views/PreliminaryPages/ContactUs.vue")
+  },
   {
-    path: '/login',
-    name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Authentication/Login.vue')
-   },
+    path: "/amrservices",
+    name: "AudienceMeasurementReport",
+    component: () => import("../views/Services/AMRServices.vue")
+  },
   {
-    path: '/signup',
-    name: 'SignUp',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Authentication/SignUp.vue')
-   }
-]
+    path: "/mmrservices",
+    name: "MediaMonitoringReport",
+    component: () => import("../views/Services/MMRServices.vue")
+  },
+  {
+    path: "/mmrservices",
+    name: "Integration Analysis",
+    component: () => import("../views/Services/MMRServices.vue")
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("../views/Authentication/Login.vue")
+  },
+  {
+    path: "/signup",
+    name: "SignUp",
+    component: () => import("../views/Authentication/SignUp.vue")
+  }
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;
