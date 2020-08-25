@@ -1,43 +1,43 @@
 <template>
-  <form>
-    <v-text-field
-      v-model="name"
-      :error-messages="nameErrors"
-      :counter="10"
-      label="Name"
-      required
-      @input="$v.name.$touch()"
-      @blur="$v.name.$touch()"
-    ></v-text-field>
-    <v-text-field
-      v-model="email"
-      :error-messages="emailErrors"
-      label="E-mail"
-      required
-      @input="$v.email.$touch()"
-      @blur="$v.email.$touch()"
-    ></v-text-field>
-    <v-select
-      v-model="select"
-      :items="items"
-      :error-messages="selectErrors"
-      label="Item"
-      required
-      @change="$v.select.$touch()"
-      @blur="$v.select.$touch()"
-    ></v-select>
-    <v-checkbox
-      v-model="checkbox"
-      :error-messages="checkboxErrors"
-      label="Do you agree?"
-      required
-      @change="$v.checkbox.$touch()"
-      @blur="$v.checkbox.$touch()"
-    ></v-checkbox>
+   <v-row >
+    <v-col cols="3"></v-col>
+      <v-col cols="6">
+        <v-card class="pa-2" outlined tile>
+          <v-form ref="form" v-model="valid" lazy-validation >
+              <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name"  required > </v-text-field>
 
-    <v-btn class="mr-4" @click="submit">submit</v-btn>
-    <v-btn @click="clear">clear</v-btn>
-  </form>
+              <v-text-field v-model="email" :rules="emailRules" label="E-mail"  required></v-text-field>
+
+              <v-select v-model="select" :items="items" :rules="[v => !!v || 'Item is required']" label="Item" required></v-select>
+
+              <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']"
+                 label="Do you agree?"  required
+              ></v-checkbox>
+
+              <v-row>
+                 <v-spacer></v-spacer>
+                  <v-btn
+                    color="success"
+                    class="mr-4"
+                    @click="reset"
+                  >
+                    Register
+                  </v-btn>
+
+                  <v-btn
+                    color="warning"
+                    @click="resetValidation"
+                  >
+                  Clear
+                  </v-btn>
+
+               <v-spacer></v-spacer>
+              </v-row>
+            </v-form>
+        </v-card>
+      </v-col>
+      <v-col cols="3"></v-col>
+</v-row>
 </template>
 
 <script>
