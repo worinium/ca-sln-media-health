@@ -22,13 +22,12 @@
         <v-spacer></v-spacer>
         <v-toolbar-items>
             <v-btn flat to="/">
-                <v-icon small>mdi-desktop-classic</v-icon>
                 <span>Home</span>
             </v-btn>
             <v-menu :rounded="rounded" open-on-hover offset-y transition="slide-x-transition" bottom right>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn flat v-bind="attrs" v-on="on">
-                        <v-icon small>mdi-clock</v-icon>&nbsp; Services
+                        Services <i class="fas fa-caret-down"></i>
                     </v-btn>
                 </template>
                 <v-list dense>
@@ -43,10 +42,10 @@
                 </v-list>
             </v-menu>
             <v-btn to="/about" flat>
-                <v-icon small>mdi-heart</v-icon>&nbsp; About Us
+                About Us
             </v-btn>
             <v-btn to="/contact" flat>
-                <v-icon small>mdi-magnify</v-icon>&nbsp; Contact Us
+                Contact Us
             </v-btn>
         </v-toolbar-items>
         <v-spacer></v-spacer>
@@ -108,13 +107,13 @@ export default {
             },
             {
                 index: 3,
-                title: "Media Monitoring Report (MMR)",
+                title: "Media Monitoring",
                 icon: "mdi-home-city",
                 link: "/amservices"
             },
             {
                 index: 4,
-                title: "(MMR)",
+                title: "Audience Measurement",
                 icon: "mdi-account-group-outline",
                 link: "/amservices"
             },
