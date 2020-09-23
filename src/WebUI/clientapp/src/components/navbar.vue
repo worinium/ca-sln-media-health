@@ -27,7 +27,7 @@
             <v-menu :rounded="rounded" open-on-hover offset-y transition="slide-x-transition" bottom right>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn flat v-bind="attrs" v-on="on">
-                        Services <i class="fas fa-caret-down"></i>
+                        Services <v-icon>{{show ? "mdi-chevron-up" : "mdi-chevron-down"}}</v-icon>
                     </v-btn>
                 </template>
                 <v-list dense>
