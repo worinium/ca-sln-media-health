@@ -1,26 +1,30 @@
 <template>
-  <v-app>
-      <navbar/>
-      <v-main>
-        <router-view/>
-      </v-main>
-      <footers/>
-  </v-app>
+<v-app id="app">
+    <v-row v-if="CheckLoginExist">
+        <app-admin />
+    </v-row>
+    <v-row v-else>
+        <app-default />
+    </v-row>
 </template>
 
 <script>
-import footers from './components/footers';
-import navbar from './components/navbar';
+import adminLayout from './components/Layout/adminLayout';
+import defaultLayout from './components/Layout/defaultLayout';
 
 export default {
-  name: 'App',
+    name: 'App',
 
-  components: {
-    navbar,  footers
-  },
+    components: {
+        'app-default': defaultLayout,
+        'app-admin': adminLayout
+    },
 
-  data: () => ({
-    //
-  }),
+    data: () => ({
+        CheckLoginExist: false
+    }),
+    methods() {
+
+    }
 };
 </script>

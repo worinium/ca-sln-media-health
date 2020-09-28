@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="d-flex justify-center align-center">
     <v-card>
         <v-navigation-drawer v-model="drawer" absolute temporary app clipped>
             <v-list v-for="(item, index) in navigationDrawerItems" :key="index" dense>
@@ -24,7 +24,7 @@
             <v-btn flat to="/">
                 <span>Home</span>
             </v-btn>
-            <v-menu :rounded="rounded" open-on-hover offset-y transition="slide-x-transition" bottom right>
+            <v-menu v-for="([text, rounded]) in btns" :key="text" :rounded="rounded" open-on-hover offset-y transition="slide-x-transition" bottom right>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn flat v-bind="attrs" v-on="on">
                         Services <v-icon>{{show ? "mdi-chevron-up" : "mdi-chevron-down"}}</v-icon>
@@ -41,6 +41,7 @@
                     </v-list-item>
                 </v-list>
             </v-menu>
+
             <v-btn to="/about" flat>
                 About Us
             </v-btn>
@@ -139,7 +140,14 @@ export default {
                 title: "Integration Analysis",
                 link: ""
             }
-        ]
+        ],
+        btns: [
+            //  ['Removed', '0'],
+            // ['Large', 'lg'],
+            ['Custom', 'b-xl'],
+        ],
+        colors: ['deep-purple accent-4', 'error', 'teal darken-1'],
+        items: [...Array(4)].map((_, i) => `Item ${i}`),
     })
 };
 </script>
