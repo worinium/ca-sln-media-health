@@ -1,5 +1,5 @@
 <template>
-<div class="d-flex justify-center align-center">
+<v-row>
     <v-card>
         <v-navigation-drawer v-model="drawer" absolute temporary app clipped>
             <v-list v-for="(item, index) in navigationDrawerItems" :key="index" dense>
@@ -77,7 +77,7 @@
             </v-card>
         </v-menu>
     </v-toolbar>
-</div>
+</v-row>
 </template>
 
 <script>

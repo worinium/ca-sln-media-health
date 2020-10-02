@@ -1,5 +1,5 @@
 <template>
-<div id="app">
+<div id="defaultlayout">
     <app-header />
     <slot />
     <app-footer />
@@ -10,7 +10,7 @@
 import Navbar from "./components/navbar.vue";
 import Footer from "./components/footer.vue";
 export default {
-    name: "app",
+    name: "defaultlayout",
     components: {
         'app-header': Navbar,
         'app-footer': Footer

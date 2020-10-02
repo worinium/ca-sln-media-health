@@ -1,10 +1,9 @@
 <template>
-<div id="app">
+<div id="adminLayout">
     <app-header />
     <v-main>
         <v-row>
-            <v-col>
-            </v-col>
+            <v-col> </v-col>
             <v-col>
                 <slot />
             </v-col>
@@ -18,10 +17,10 @@
 import Navbar from "./components/navbar.vue";
 import Footer from "./components/footer.vue";
 export default {
-    name: "app",
+    name: "adminLayout",
     components: {
-        'app-header': Navbar,
-        'app-footer': Footer
+        "app-header": Navbar,
+        "app-footer": Footer
     }
 };
 </script>
