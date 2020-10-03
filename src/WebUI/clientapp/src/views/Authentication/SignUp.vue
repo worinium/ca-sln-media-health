@@ -4,7 +4,7 @@
         <v-row align="center" justify="center">
             <v-col cols="12" md="6" sm="4">
                 <v-card class="elevation-12">
-                    <v-toolbar dark flat>
+                    <v-toolbar raise elevation tile>
                         <v-toolbar-title>Sign-Up Form</v-toolbar-title>
 
                     </v-toolbar>
