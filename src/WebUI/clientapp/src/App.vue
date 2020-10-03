@@ -2,19 +2,13 @@
 <v-app id="app">
     <app-header />
 
-    <v-row class="grey lighten-5">
-        <v-row no-gutters>
-            <v-col cols="3">
-                <v-card class="pa-2" outlined tile>
-                    <app-aside />
-                </v-card>
-            </v-col>
-            <v-col cols="9">
-                <v-card class="pa-2" outlined tile>
-                    <router-view></router-view>
-                </v-card>
-            </v-col>
-        </v-row>
+    <v-row no-gutters class="grey lighten-5">
+        <v-col cols="2">
+            <app-aside />
+        </v-col>
+        <v-col cols="10">
+            <router-view></router-view>
+        </v-col>
     </v-row>
 
     <app-footer />

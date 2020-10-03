@@ -1,5 +1,5 @@
 <template>
-<v-card>
+<v-card tile>
     <v-navigation-drawer permanent expand-on-hover>
         <v-list>
             <v-list-item class="px-2">
@@ -11,9 +11,9 @@
             <v-list-item link>
                 <v-list-item-content>
                     <v-list-item-title class="title">
-                        Sandra Adams
+                        Hearty Alapher
                     </v-list-item-title>
-                    <v-list-item-subtitle>sandra_a88@gmail.com</v-list-item-subtitle>
+                    <v-list-item-subtitle>alapherwori8g5@gmail.com</v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
         </v-list>

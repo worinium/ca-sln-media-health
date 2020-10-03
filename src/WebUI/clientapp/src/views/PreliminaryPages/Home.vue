@@ -73,7 +73,7 @@
         <v-spacer></v-spacer>
     </v-col>
     <v-row class="py-2">
-        <v-col v-for="n in 4" :key="n">
+        <v-col v-for="n in 6" :key="n">
             <v-card class="pa-2" tile outlined>
                 <v-card class="mx-auto" max-width="250">
                     <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="100px"></v-img>
