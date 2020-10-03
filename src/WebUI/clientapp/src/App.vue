@@ -1,23 +1,10 @@
 <template>
 <v-app id="app">
-    <v-row v-if="CheckLoginExist">
-        <app-header />
-        <router-view></router-view>
-        <app-footer />
-    </v-row>
-    <v-row v-else>
-        <app-header />
-        <v-main>
-            <v-row>
-                <v-col cols="3"></v-col>
-                <v-col cols="6">
-                    <router-view></router-view>
-                </v-col>
-                <v-col cols="3"></v-col>
-            </v-row>
-            <app-footer />
-        </v-main>
-    </v-row>
+
+    <app-header />
+    <router-view></router-view>
+    <app-footer />
+
 </v-app>
 </template>
 
@@ -34,7 +21,7 @@ export default {
     },
 
     data: () => ({
-        CheckLoginExist: false
+        CheckLoginExist: true
     }),
     methods() {
 

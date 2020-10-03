@@ -1,34 +1,41 @@
 <template>
 <v-container class="fill-height" fluid>
     <v-row>
-        <v-col cols="3"></v-col>
-        <v-col cols="6">
-            <v-card class="pa-2" outlined tile>
-                <v-form ref="form" v-model="valid" lazy-validation>
-                    <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required> </v-text-field>
+        <v-row align="center" justify="center">
+            <v-col cols="12" md="6" sm="4">
+                <v-card class="elevation-12">
+                    <v-toolbar dark flat>
+                        <v-toolbar-title>Sign-Up Form</v-toolbar-title>
 
-                    <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+                    </v-toolbar>
+                    <v-card-text>
+                        <v-form ref="form" v-model="valid" lazy-validation>
+                            <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required> </v-text-field>
 
-                    <v-select v-model="select" :items="items" :rules="[v => !!v || 'Item is required']" label="Gender" required></v-select>
+                            <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
 
-                    <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree?" required></v-checkbox>
+                            <v-select v-model="select" :items="items" :rules="[v => !!v || 'Item is required']" label="Gender" required></v-select>
 
-                    <v-row>
-                        <v-spacer></v-spacer>
-                        <v-btn color="success" class="mr-4" @click="reset">
-                            Register
-                        </v-btn>
+                            <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree?" required></v-checkbox>
 
-                        <v-btn color="warning" @click="resetValidation">
-                            Clear
-                        </v-btn>
+                            <v-row>
+                                <v-spacer></v-spacer>
+                                <v-btn dark class="mr-4" @click="reset">
+                                    Register
+                                </v-btn>
 
-                        <v-spacer></v-spacer>
-                    </v-row>
-                </v-form>
-            </v-card>
-        </v-col>
-        <v-col cols="3"></v-col>
+                                <v-btn dark @click="resetValidation">
+                                    Clear
+                                </v-btn>
+
+                                <v-spacer></v-spacer>
+                            </v-row>
+                        </v-form>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
+
     </v-row>
 </v-container>
 </template>

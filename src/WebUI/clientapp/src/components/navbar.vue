@@ -1,19 +1,18 @@
 <template>
-<v-row>
-    <v-card>
-        <v-navigation-drawer v-model="drawer" absolute temporary app clipped>
-            <v-list v-for="(item, index) in navigationDrawerItems" :key="index" dense>
-                <v-list-item link>
-                    <v-list-item-action>
-                        <v-icon>{{ item.icon }}</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>{{ item.title }}</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list>
-        </v-navigation-drawer>
-    </v-card>
+<v-card>
+    <v-navigation-drawer v-model="drawer" absolute temporary app clipped>
+        <v-list v-for="(item, index) in navigationDrawerItems" :key="index" dense>
+            <v-list-item link>
+                <v-list-item-action>
+                    <v-icon>{{ item.icon }}</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+        </v-list>
+    </v-navigation-drawer>
+
     <v-toolbar rounded tile>
         <v-app-bar-nav-icon @click="drawer=true"> </v-app-bar-nav-icon>
         <v-app-bar-title>
@@ -54,30 +53,10 @@
             <v-btn to="/signup" flat>Sign Up </v-btn>
             <v-btn to="/login" flat>login</v-btn>
         </v-toolbar-items>
-        <v-menu open-on-hover transition="slide-x-transition" bottom right offset-y>
-            <template v-slot:activator="{ on, attrs }">
-                <v-btn icon v-bind="attrs" v-on="on">
-                    <v-icon>mdi-dots-vertical</v-icon>
-                </v-btn>
-            </template>
-            <v-card class="mx-auto" max-width="300" tile>
-                <v-list dense>
-                    <v-subheader>THEMES</v-subheader>
-                    <v-list-item-group v-model="theme" color="primary">
-                        <v-list-item v-for="(item, i) in themes" :key="i" link>
-                            <v-list-item-action>
-                                <v-icon v-text="item.icon"></v-icon>
-                            </v-list-item-action>
-                            <v-list-item-action>
-                                <v-list-item-title v-text="item.text"></v-list-item-title>
-                            </v-list-item-action>
-                        </v-list-item>
-                    </v-list-item-group>
-                </v-list>
-            </v-card>
-        </v-menu>
+        <v-switch v-model="$vuetify.theme.dark" hint="Switch Theme" inset label="Theme" persistent-hint></v-switch>
+
     </v-toolbar>
-</v-row>
+</v-card>
 </template>
 
 <script>
