@@ -15,14 +15,15 @@
 
     <v-toolbar>
         <v-app-bar-nav-icon @click="drawer=true"> </v-app-bar-nav-icon>
-        <v-app-bar-title>
-            <route-link to="/" tag style="cursor:pointer">MediaHealth</route-link>
-        </v-app-bar-title>
-        <v-spacer></v-spacer>
-        <v-toolbar-items>
+        <v-toolbar-items class="hidden-sm-and-down">
             <v-btn flat to="/">
-                <span>Home</span>
+                <v-app-bar-title>
+                    <route-link to="/" tag style="cursor:pointer">MediaHealth</route-link>
+                </v-app-bar-title>
             </v-btn>
+        </v-toolbar-items>
+        <v-spacer></v-spacer>
+        <v-toolbar-items class="hidden-sm-and-down">
             <v-menu v-for="([text, rounded]) in btns" :key="text" :rounded="rounded" open-on-hover offset-y transition="slide-x-transition" bottom right>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn flat v-bind="attrs" v-on="on">
@@ -52,31 +53,21 @@
         <v-toolbar-items class="hidden-sm-and-down">
             <v-btn to="/signup" flat>Sign Up </v-btn>
             <v-btn to="/login" flat>login</v-btn>
-        </v-toolbar-items>
-        <v-menu v-for="([text, rounded]) in btns" :key="text" transition="slide-x-transition" :rounded="rounded" offset-y bottom right>
-            <template v-slot:activator="{ on, attrs }">
-                <v-btn icon v-bind="attrs" v-on="on">
-                    <v-icon>mdi-dots-vertical</v-icon>
-                </v-btn>
-            </template>
-            <v-card class="mx-auto" max-width="300" tile>
-                <v-list dense>
 
-                    <v-switch v-model="$vuetify.theme.dark" hint="Toggle themes" inset label=" Theming" persistent-hint></v-switch>
-                    <!--
-                        <v-list-item-group v-model="theme" color="primary">
-                            <v-list-item v-for="(item, i) in themes" :key="i" link>
-                                <v-list-item-action>
-                                    <v-icon v-text="item.icon"></v-icon>
-                                </v-list-item-action>
-                                <v-list-item-action>
-                                    <v-list-item-title v-text="item.text"></v-list-item-title>
-                                </v-list-item-action>
-                            </v-list-item>
-                        </v-list-item-group> -->
-                </v-list>
-            </v-card>
-        </v-menu>
+            <v-btn flat>
+                <v-menu transition="slide-x-transition" offset-y bottom right>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn icon v-bind="attrs" v-on="on">
+                            <v-icon>mdi-dots-vertical</v-icon>
+                        </v-btn>
+                    </template>
+                    <v-card class="mx-auto" max-width="300" tile>
+                        <v-switch v-model="$vuetify.theme.dark" hint="Toggle themes" inset label=" Theming" persistent-hint>
+                        </v-switch>
+                    </v-card>
+                </v-menu>
+            </v-btn>
+        </v-toolbar-items>
     </v-toolbar>
 </v-card>
 </template>
@@ -149,6 +140,6 @@ export default {
         ],
         colors: ['deep-purple accent-4', 'error', 'teal darken-1'],
         items: [...Array(4)].map((_, i) => `Item ${i}`),
-    })
+    }),
 };
 </script>
