@@ -1,5 +1,5 @@
 <template>
-<v-card tile>
+<v-card style="height:100%">
     <v-navigation-drawer permanent expand-on-hover>
         <v-list>
             <v-list-item class="px-2">
