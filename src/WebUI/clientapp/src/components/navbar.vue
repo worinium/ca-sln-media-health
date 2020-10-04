@@ -14,8 +14,8 @@
     </v-navigation-drawer>
 
     <v-toolbar>
-        <v-app-bar-nav-icon @click="drawer=true"> </v-app-bar-nav-icon>
-        <v-toolbar-items class="hidden-sm-and-down">
+        <v-toolbar-title class="hidden-sm-and-up">Media-Health</v-toolbar-title>
+        <v-toolbar-items class=" hidden-sm-and-down">
             <v-btn flat to="/">
                 <v-app-bar-title>
                     <route-link to="/" tag style="cursor:pointer">MediaHealth</route-link>
@@ -68,6 +68,8 @@
                 </v-menu>
             </v-btn>
         </v-toolbar-items>
+        <v-app-bar-nav-icon @click.native.stop="drawer=!drawer" class="hidden-sm-and-up"> </v-app-bar-nav-icon>
+
     </v-toolbar>
 </v-card>
 </template>
@@ -76,37 +78,28 @@
 export default {
     data: () => ({
         activate: true,
-        theme: 1,
-        themes: [{
-                text: "Dark",
-                icon: "mdi-clock"
-            },
-            {
-                text: "Light",
-                icon: "mdi-account"
-            }
-        ],
-        drawer: true,
+
+        drawer: false,
         navigationDrawerItems: [{
                 index: 1,
-                title: "Dashboard",
+                title: "Home",
                 icon: "mdi-home-city"
             },
             {
                 index: 2,
-                title: "My Account",
+                title: "Services",
                 icon: "mdi-account",
                 link: "/amservices"
             },
             {
                 index: 3,
-                title: "Media Monitoring",
+                title: "About",
                 icon: "mdi-home-city",
                 link: "/amservices"
             },
             {
                 index: 4,
-                title: "Audience Measurement",
+                title: "Contact Us",
                 icon: "mdi-account-group-outline",
                 link: "/amservices"
             },
