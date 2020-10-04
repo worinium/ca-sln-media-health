@@ -1,5 +1,5 @@
 <template>
-<v-row>
+<v-container>
     <v-carousel cycle height="550" hide-delimiter-background show-arrows-on-hover>
         <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-sheet :color="colors[i]" height="100%">
@@ -9,7 +9,7 @@
             </v-sheet>
         </v-carousel-item>
     </v-carousel>
-</v-row>
+</v-container>
 </template>
 
 <script>
